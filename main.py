@@ -54,10 +54,11 @@ if __name__ == "__main__":
     print("Using OCR Tool: '%s'" % (tool.get_name()))
 
     image_files = [f for f in os.listdir(path=args.dir) if re.search(pattern, f, re.IGNORECASE)]
-    print("check files: ", image_files)
+    print("check file count: ", len(image_files))
 
     document_files = []
     for f in image_files:
+        print("check file: ", f)
         if is_doc_image(path.abspath(f), args.lang) is True:
             document_files.append(path.abspath(f))
 
